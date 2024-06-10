@@ -1,0 +1,25 @@
+Design patterns
+wat are the design pattern you are using?
+
+Project
+Explain Design assosiated with project like how request comes in, entire duration and lifecycle of project so what are the things making use of so we can discuss on the technology assosiate with it.
+
+microservices:
+So in respect to microservices what are the aspect of microservieces that you used at and what are the features you you had used in your applications.
+
+Security framework is inbuilt,how security work internally.
+
+How your java application communicate with ngnix. How communication taken place internally.
+How two api communicate each other.
+
+How to handle transation? Is it single database or multiple database.
+
+When we go for optimistic lock and when we go for  pessimistic lock
+
+Havve You used multithreading in your project
+
+You are using optimistic locking and your project is multi thread and you are trying to acess it parllely or concurrently so do you handle it or Transation Manager will handle it
+by itself. Answer Transation manager will take care--Stream2Learn
+
+
+

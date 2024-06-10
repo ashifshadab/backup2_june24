@@ -1,0 +1,26 @@
+@Qualifier:- Spring first finds autowiring candidate 'by type' for the fields, constructor arguments and method arguments that are annotated with @Autowired annotation. Then Spring uses the bean name specified by @Qualifier annotation to locate a unique bean from the list of autowiring candidates.
+
+@Named:- @Named annotations that are similar to Spring's @Autowired and @Qualifier annotations respectively. @Named annotaion has been used in place of @Service and @Qualifier annotations.
+Note:-@Named and @Inject annotaion are Dependency Injection for Java, and Spring provides support for @Inject and @Named annotations. To use @Named and @Inject annotations, we need to include JSR 330 JAR File in our project.
+
+@Inject:- @Inject annotation has been used in place of @Autowired annotation. It is also used for autowiring dependencies by type. It can be used at method level, constructor level and field level. @Inject doesn't have an equivalent of @Autowired annotaion's required attribute but we can use Java8's Optional type to achieve the same behavior.
+
+@PostConstruct-Chapter 5
+@PreDestroy-Chapter 5
+@PostConstruct and @PreDestroy annotations that are used to identify initialization and destruction methods of a bean.
+
+@Resource annotation [JSR 250'S]:- @Resource annotation that we can use for autowiring dependecies by name.
+@Resource annotation is processed by CommonAnnotationBeanPostProcessor (a BeanPostProcessor implementation). @Resource annotation's name attribute specifies the name of the bean to be autowired. @Resource annotation's name attribute specifies the name of the bean to be autowired. It is important to note that you can't use @Resource annotation for autowiring constructor arugments and methods that accept multiple arguments.
+
+
+Instead of using @Autowired and @Qualifier annotation you should use @Resource annotation fro autowiring dependecies 'by name'. If you are using @Autowired-@Qualifier combination to perform autowiring 'by name', Spring first finds bean based on the type of the field (or the type of the method argument or constructor argument) to be autowired, followed by narrowing down to a unique bean based on the bean name specified by @Qualifer annotation.
+
+If you are using @Resource annotation, Spring uses bean name specified by @Resource annotation to locate a unique bean. This means that when you use @Resource annotation, type of the field (or setter method argument) to be autowired is not taken into consideration by Spring.
+@Autowired annotation doesn't work for beans that are themselves of collection or Map type.
+
+If we define a bean using util schema's map element, we can't autowrie it using @Autowired annotation. In such scenarios, we should use @Resource annotation for autowiring beans.
+
+Note:- As @Autowired, @Inject and @Resource annotatin are processed by BeanPostProcessors, you should not use these annotations in component classes that implement BeanFactoryPostProcessor or BeanPostProcessor interface.
+
+
+

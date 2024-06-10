@@ -1,0 +1,174 @@
+
+Are string mutable or immutable ? What is the main reason why strings are made immutable?
+String builder vs buffer , which is better
+	buffer -> thread safe
+	builder is efficient and faster
+
+
+What is the difference between an abstract class and an interface?
+
+wrapper classes?
+
+When to use a transient variable in Java?
+
+What is final in java? 
+Can final variable initialized?
+	Yes, if it is not static, we can initialize it in the constructor. If it is static blank final variable, it can be initialized only in the static block
+
+Can we declare a constructor as final?
+Can we declare an interface as final?
+What is the difference between the final method and abstract method?
+
+
+How to convert String to Date Example in Java Multithreading
+
+Why do we use getter and setters ?
+
+
+How does Spring Boot works?
+What is @ComponentScan
+How to disable a specific auto-configuration class?
+
+Differences between @RequestParam and @PathVariable annotations in Spring MVC?
+What is the difference between @RestController and @Controller in Spring Boot?
+
+What is Spring Actuator? What are its advantages? How to enable it? actuator-provided endpoints for monitoring
+
+Different types of cascading?
+
+why did you use confluence?
+
+why did you use redis? Any better alternative to redis?
+
+custom exceptions with spring? 
+	@ControllerAdvice :  consolidate our multiple, scattered @ExceptionHandlers from before into a single, global error handling component.
+
+how to create a read-only array list? 
+	unmodifiableList()
+
+
+Open-Closed Principle (OCP)?
+	The Open close principle states that any class, component or entity should be open for extension but closed for modification. A class can be extended via Inheritance, Interfaces, Composition whenever required instead of modifying the code of the class
+
+
+Explain the Singleton pattern?
+	Singleton pattern in Java is a pattern which allows a single instance within an application. One good example of the singleton pattern is java.lang.Runtime.
+
+	Singleton Pattern states that define a class that has only one instance and provides a global point of access to it. In other words, it is the responsibility of the class that only a single instance should be created, and all other classes can use a single object.	
+
+https://www.javatpoint.com/singleton-design-pattern-in-java (also has an ex)
+
+
+Hashcollision?
+
+Junit?
+
+
+Iterate over a map with example
+
+
+map with duplicate keys.
+	UserDto -> userName, userId
+	List -> [{"userName":"U1",userId":1},{"userName":"U2","userId":2},{"userName":"U3","userId":1},{"userName":"U4","userId":3}]
+	With key as userId create a map from this list
+
+groupingBy or Multimap
+	Multimap<Long, UserDto> map = ArrayListMultimap.create();
+
+
+write a program to get a map's key based on it's value
+	Set<String> mapKeys = map.entrySet().stream().map(Map.Entry::getKey).collect(Collectors.toSet());
+
+
+What will happen if you run 1.0/0.0?
+	System.out.print(1.0/0.0);
+
+
+Sort a list based on userId
+	UserDto -> userName, userId
+	List -> [{"userName":"U1",userId":5},{"userName":"U2","userId":1},{"userName":"U3","userId":21},{"userName":"U4","userId":7}]
+
+Sol.
+Collections.sort(userList, new Comparator<AgentSummaryDTO>(){
+   public int compare(AgentSummaryDTO o1, AgentSummaryDTO o2){
+      return o1.userId() - o2.userId();
+   }
+});
+
+
+We have a list of String given below
+Using java 8 iterate over a list and throw an exception if the input string is not found in the list.
+
+List<String> stringList = Arrays.asList("String1","String2","String3");
+	Sol: stringList.stream().filter(s -> s.equalsIgnoreCase("String4")).findFirst()
+					.orElseThrow(() -> new Exception());
+
+What will be the output and why?
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		someMethod(null);
+	}
+
+	public static void someMethod(Object o) {
+		System.out.println("Object method Invoked");
+	}
+
+	public static void someMethod(String s) {
+		System.out.println("String method Invoked");
+	}
+
+}
+
+
+Get the first non repeating character:
+	example : analogy -> o/p : n
+			  stress -> o/p : t
+			  mammal -> o/p : l	
+
+
+count the number of characters in a string
+	- This is a string to be counted for words
+o/p: {d=2, e=2, i=3, n=2, o=4, r=3, s=4, t=3}
+
+
+program to find the second-highest number in an array
+	- { 100,14, 46, 47, 94, 94, 52, 86, 36, 94, 89 }
+	
+
+String s1 = "Hello";
+String s2 = "hello";
+String s3 =  new String("hello");
+
+o/p of
+	System.out.println(s1 == s2); 
+    System.out.println(s1 == s3); 
+    System.out.println(s1.equals(s2)); 
+    System.out.println(s1.equals(s3)); 
+    System.out.println(s2.equals(s3)); //true
+    System.out.println('a' == 97);
+
+Ref: https://www.geeksforgeeks.org/difference-between-and-equals-method-in-java/
+
+
+
+o/p
+
+class Test1 {
+public static void main(String[] args)
+    {
+        int x = 20;
+        System.out.println(x);
+    }
+
+    static
+    {
+        int x = 10;
+        System.out.print(x + " ");
+    }
+}
+
+A: 10 20
+
+Ref: https://www.geeksforgeeks.org/output-java-programs-set-48-static-keyword/

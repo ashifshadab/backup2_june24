@@ -1,0 +1,31 @@
+kafka commons utility project:
+https://bitbucket.org/Zshop-Product-Engineering/platform-common/src/dev-p2/commons-queue/
+
+Sample project (consumer example):
+https://bitbucket.org/Zshop-Product-Engineering/ezmall-seller/src/master/ezseller-indexer/
+
+Files to check (similar for all projects):
+
+    application.yml : for config urls
+
+    EzsellerIndexerDeployApplication.Java : Main file for component scan and enableConsumer arg
+
+    ezseller-indexer-service module's pom.xml : dependency added for utility project
+
+    SellerDetailsConsumer.Java : consumer
+
+
+Sample project (producer example)
+https://bitbucket.org/Zshop-Product-Engineering/ezmall-seller/src/master/ezseller-product/
+
+ 
+
+File to check for producer use:
+
+    ProductBulkUploadServiceImpl.Java : Line 296, method -> pushVideoProcessToKafka
+
+
+branches are mentioned in the url
+
+
+
